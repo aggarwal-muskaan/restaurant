@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navigation from "./Navigation";
 import RestaurantCards from "./RestaurantCards";
 
 function Homepage() {
@@ -19,7 +20,7 @@ function Homepage() {
 
   return (
     <div>
-      navigation
+      <Navigation />
       <div>
         <h3>Category</h3>
         <div>
