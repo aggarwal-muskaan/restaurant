@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
+import FilterDrawer from "./FilterDrawer";
 import RestaurantCards from "./RestaurantCards";
 
 function Homepage() {
@@ -49,6 +50,7 @@ function Homepage() {
           ))}
         </div>
       </div>
+      <FilterDrawer />
     </div>
   );
 }
