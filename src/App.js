@@ -23,7 +23,7 @@ function App() {
         />
 
         {/* details of specific restaurant and using its name as URL parameter */}
-        <Route exact path="/:name" render={() => <RestaurantDetails />} />
+        <Route exact path="/:restrId" render={() => <RestaurantDetails />} />
       </Switch>
     </div>
   );
