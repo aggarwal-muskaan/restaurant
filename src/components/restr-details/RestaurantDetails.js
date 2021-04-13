@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import { useSpinner } from "../../hooks/useSpinner";
 
 function RestaurantDetails() {
   let params = useParams();
   let history = useHistory();
   const [selectedRestr, setRestr] = useState([]);
-  const [spinner, setSpinner] = useState(true);
+  const [spinner, handleSpinner] = useSpinner(true);
 
   const restrDetailsUrl =
     "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/restaurantDetails";
@@ -20,7 +21,7 @@ function RestaurantDetails() {
         const askedRestr = data.restaurantDetails[0];
         // updates state only if the Restaurant found
         askedRestr && setRestr(askedRestr);
-        setSpinner(false);
+        handleSpinner(false);
       })
       .catch((err) => console.log(err));
   }, [params]);
