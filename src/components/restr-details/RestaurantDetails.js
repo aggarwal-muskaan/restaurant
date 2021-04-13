@@ -56,7 +56,12 @@ function RestaurantDetails() {
         </div>
       </div>
     ) : (
-      <div>No Such restaurant</div>
+      <div>
+        <p>No Such restaurant</p>
+        <button onClick={() => history.push("/")}>
+          Explore other Restaurants
+        </button>
+      </div>
     );
 
   return spinner ? "Loading..." : printData;
