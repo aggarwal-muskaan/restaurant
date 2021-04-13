@@ -13,11 +13,15 @@ function Navigation() {
       <div>
         location
         <input
+          value={input}
           type="text"
           placeholder="Search for Restaurants (Press Enter to search)"
           onChange={handleChange}
           onKeyUp={(e) => {
-            if (e.key === "Enter") alert(`you pressed Enter after ${input}`);
+            if (e.key === "Enter") {
+              alert(`you pressed Enter after ${input}`);
+              setInput("");
+            }
           }}
         />
         <button onClick={() => showDrawer(true)}>filter</button>
