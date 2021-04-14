@@ -1,26 +1,11 @@
-import React, { useEffect, useState } from "react";
+// import React, { useState } from "react";
+import { useBaseUrl } from "../../hooks/useBaseUrl";
 import Navigation from "./Navigation";
 import FilterDrawer from "./FilterDrawer";
 import RestaurantCards from "./RestaurantCards";
-import { useSpinner } from "../../hooks/useSpinner";
 
 function Homepage() {
-  const [restr, setRestr] = useState([]);
-  const [loading, handleLoading] = useSpinner(true);
-
-  useEffect(() => {
-    const baseUrl =
-      "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/allRestaurants";
-
-    fetch(baseUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data.allRestaurants);
-        handleLoading(false);
-        setRestr(data.allRestaurants);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const [restr, loading] = useBaseUrl([]);
 
   return (
     <div>
