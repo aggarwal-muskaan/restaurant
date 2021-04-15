@@ -3,7 +3,7 @@ import { useToggle } from "../../hooks/useToggle";
 import { filterRestr } from "../../contexts/filterRest.context";
 
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import { useStyle } from "../../styles/Category";
 
 import baked from "../../assets/category/baked.svg";
@@ -57,6 +57,7 @@ function Category() {
             <Grid
               onClick={() => handleClick(c.text)}
               container
+              key={c.text}
               spacing={1}
               // xs={3}
               // sm={2}
@@ -67,9 +68,7 @@ function Category() {
                 <img src={c.icon} alt={c.text} />
               </Grid>
               <Grid item>
-                <Typography>
-                  <h3 className={classes.CategoryValue}>{c.text}</h3>
-                </Typography>
+                <h3 className={classes.CategoryValue}>{c.text}</h3>
               </Grid>
             </Grid>
           ))}
