@@ -27,8 +27,31 @@ function reducer(currState, action) {
       return arr;
     }
 
-    case "filterByCuisine":
-      return currState;
+    case "filterByCuisine": {
+      if (action.value.length === 0 || action.value.includes("All"))
+        return allRestaurantsData;
+      else {
+        const arr = allRestaurantsData.filter((r) => {
+          // since restaurantCuisine is not an array, therefore separating each cuisine with ',' as delimiter
+          const newArr = r.restaurantCuisine.split(",");
+          let flag = false;
+
+          for (let i = 0; i < newArr.length; i++) {
+            // removing characters('',[,]) from each element
+            const words = newArr[i].match(/[a-zA-Z]+/g);
+            // combining words into a single cuisine as match() return an array
+            const combineWords = words.join(" ");
+            // include() is case-sensitive
+            if (action.value.includes(combineWords)) {
+              flag = true;
+            }
+          }
+          if (flag) return r;
+          // flag && return r
+        });
+        return arr;
+      }
+    }
 
     default:
       return currState;
