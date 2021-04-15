@@ -1,7 +1,8 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { Drawer } from "./contexts/drawer.context";
-import Sidebar from "./components/Sidebar";
+import { ApplyFilter } from "./contexts/filterRest.context";
+// import Sidebar from "./components/Sidebar";
 import Homepage from "./components/restaurant/Homepage";
 import RestaurantDetails from "./components/restr-details/RestaurantDetails";
 
@@ -9,16 +10,18 @@ function App() {
   return (
     <div className="App">
       {/* fixed component */}
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Switch>
         {/* page will all restaurants */}
         <Route
           exact
           path="/"
           render={() => (
-            <Drawer>
-              <Homepage />
-            </Drawer>
+            <ApplyFilter>
+              <Drawer>
+                <Homepage />
+              </Drawer>
+            </ApplyFilter>
           )}
         />
 
