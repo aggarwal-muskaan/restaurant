@@ -9,7 +9,13 @@ import RestaurantCards from "./RestaurantCards";
 function Homepage() {
   const [allRestr, loading] = useBaseUrl([]);
   const filterRest = useContext(restaurantData);
-  const restr = filterRest.length !== 0 ? filterRest : allRestr;
+
+  let errMessage;
+  let restr;
+  if (typeof filterRest === "string") {
+    errMessage = filterRest;
+    restr = allRestr;
+  } else restr = filterRest.length !== 0 ? filterRest : allRestr;
 
   return (
     <div>
@@ -19,6 +25,7 @@ function Homepage() {
       ) : (
         <>
           <Category />
+          {errMessage && <h3>{errMessage}</h3>}
           <div>
             <h2>Restaurants</h2>
             <div>
