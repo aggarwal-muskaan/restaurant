@@ -3,8 +3,10 @@ import axios from "axios";
 import { useSpinner } from "./useSpinner";
 import { ALL_RESTR_URL } from "../variables/baseUrl";
 
+let allRestaurantsData;
+
 function useBaseUrl(init) {
-  const [allRestr, setAllRestr] = useState(init);
+  const [allRestr, setAllRestr] = useState([]);
   const [loading, handleLoading] = useSpinner(true);
 
   useEffect(
@@ -13,6 +15,7 @@ function useBaseUrl(init) {
       axios.get(baseUrl).then((res) => {
         handleLoading(false);
         setAllRestr(res.data.allRestaurants);
+        allRestaurantsData = allRestr;
       });
     },
     // eslint-disable-next-line
@@ -22,3 +25,4 @@ function useBaseUrl(init) {
 }
 
 export { useBaseUrl };
+export { allRestaurantsData };
