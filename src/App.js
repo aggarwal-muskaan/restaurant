@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { Drawer } from "./contexts/drawer.context";
 import { ApplyFilter } from "./contexts/filterRest.context";
 // import Sidebar from "./components/Sidebar";
@@ -27,6 +27,7 @@ function App() {
 
         {/* details of specific restaurant and using its name as URL parameter */}
         <Route exact path="/:restrId" render={() => <RestaurantDetails />} />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
