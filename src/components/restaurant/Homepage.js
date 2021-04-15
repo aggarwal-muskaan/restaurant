@@ -9,9 +9,8 @@ import RestaurantCards from "./RestaurantCards";
 function Homepage() {
   const [allRestr, loading] = useBaseUrl([]);
   const filterRest = useContext(restaurantData);
-  const restr = filterRest.length !== 0 || allRestr;
+  const restr = filterRest.length !== 0 ? filterRest : allRestr;
 
-  console.log(restr);
   return (
     <div>
       <Navigation />

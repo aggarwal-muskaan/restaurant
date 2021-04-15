@@ -12,8 +12,8 @@ import hotdish from "../../assets/category/hotdish.svg";
 import fastfood from "../../assets/category/fastfood.svg";
 
 function Category() {
-  const [click, toggleClick] = useToggle(false);
-  const setCategory = useContext(filterRestr);
+  // const [click, toggleClick] = useToggle(false);
+  const dispatch = useContext(filterRestr);
   const classes = useStyle();
   const categories = [
     {
@@ -37,6 +37,11 @@ function Category() {
       text: "Salads",
     },
   ];
+
+  const handleClick = (category) => {
+    dispatch({ type: "filterByCategory", value: category });
+  };
+
   return (
     <div>
       <h2>Category</h2>
@@ -50,14 +55,7 @@ function Category() {
         >
           {categories.map((c) => (
             <Grid
-              onClick={() => {
-                toggleClick();
-                click &&
-                  setCategory({
-                    filterBy: "restaurantCategory",
-                    value: c.text,
-                  });
-              }}
+              onClick={() => handleClick(c.text)}
               container
               spacing={1}
               // xs={3}
