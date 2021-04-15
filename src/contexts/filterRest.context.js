@@ -5,11 +5,11 @@ const restaurantData = createContext();
 const filterRestr = createContext();
 
 function ApplyFilter(props) {
-  const [state, setState] = useFilterApi({ filterBy: "", value: "" });
+  const [state, dispatch] = useFilterApi([]);
 
   return (
     <restaurantData.Provider value={state}>
-      <filterRestr.Provider value={setState}>
+      <filterRestr.Provider value={dispatch}>
         {props.children}
       </filterRestr.Provider>
     </restaurantData.Provider>

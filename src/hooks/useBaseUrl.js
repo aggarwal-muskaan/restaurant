@@ -15,12 +15,13 @@ function useBaseUrl(init) {
       axios.get(baseUrl).then((res) => {
         handleLoading(false);
         setAllRestr(res.data.allRestaurants);
-        allRestaurantsData = allRestr;
       });
     },
     // eslint-disable-next-line
     []
   );
+  allRestaurantsData = allRestr;
+
   return [allRestr, loading];
 }
 
