@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import { toggleContext } from "../../contexts/drawer.context";
+import { filterRestr } from "../../contexts/filterRest.context";
 
 function Navigation() {
   const showDrawer = useContext(toggleContext);
+  const dispatch = useContext(filterRestr);
   const [input, setInput] = useState("");
+
   const handleChange = (event) => {
     setInput(event.target.value);
   };
@@ -19,7 +22,8 @@ function Navigation() {
           onChange={handleChange}
           onKeyUp={(e) => {
             if (e.key === "Enter") {
-              alert(`you pressed Enter after ${input}`);
+              dispatch({ type: "filterByRestaurantName", value: input });
+              // alert(`you pressed Enter after ${input}`);
               setInput("");
             }
           }}

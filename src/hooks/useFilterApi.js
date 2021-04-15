@@ -13,7 +13,11 @@ function reducer(currState, action) {
       const arr = allRestaurantsData.filter((r) =>
         r.restaurantName.toLowerCase().includes(action.value.toLowerCase())
       );
-      return arr;
+
+      if (arr.length === 0) {
+        const errMessage = `No match found for ${action.value}`;
+        return errMessage;
+      } else return arr;
     }
 
     case "filterByCategory": {
