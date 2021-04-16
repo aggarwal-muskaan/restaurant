@@ -34,6 +34,19 @@ const useStyle = makeStyles({
     "&:hover": {
       filter: "contrast(80%)",
     },
+    "& p": {
+      position: "absolute",
+      right: "4.5%",
+      top: "5%",
+      fontSize: "80%",
+      padding: ".5em",
+      borderRadius: "50%",
+      // lineHeight: "1em",
+      color: " #fff",
+      background: "black",
+      textAlign: "center",
+      minWidth: "1em",
+    },
   },
   RestrDetailContainer: {
     width: "90%",

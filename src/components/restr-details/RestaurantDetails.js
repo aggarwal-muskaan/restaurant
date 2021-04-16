@@ -71,6 +71,7 @@ function RestaurantDetails() {
             className={`${classes.cartButton} ${classes.navigationButton}`}
           >
             <CartIcon />
+            <p>2</p>
           </button>
         </div>
 
