@@ -10,6 +10,7 @@ const useStyle = makeStyles({
   CardInfo: {
     minWidth: "300px",
     maxWidth: "330px",
+    cursor: "pointer",
   },
   CardImage: {
     width: "100%",
