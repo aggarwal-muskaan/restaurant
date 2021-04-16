@@ -2,8 +2,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import { GREY_COLOR, NAVY_BLUE_COLOR, ORANGE_COLOR } from "../variables/colors";
 
 const useStyle = makeStyles({
+  NavigationTop: {
+    margin: "2.5rem 0",
+    width: "90%",
+  },
+
   Location: {
-    width: "200px",
+    width: "120px",
     display: "flex",
     justifyContent: "space-between",
   },
