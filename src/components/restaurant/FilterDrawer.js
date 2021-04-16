@@ -2,6 +2,7 @@ import { useToggle } from "../../hooks/useToggle";
 import React, { useState, useContext } from "react";
 import { filterRestr } from "../../contexts/filterRest.context";
 import { openContext, toggleContext } from "../../contexts/drawer.context";
+import { useStyle } from "../../styles/FilterDrawer";
 
 import Drawer from "@material-ui/core/Drawer";
 import ToggleButton from "@material-ui/lab/ToggleButton";
@@ -15,12 +16,18 @@ function FilterDrawer() {
   const val = useContext(openContext);
   const dispatch = useContext(filterRestr);
   const showDrawer = useContext(toggleContext);
+
+  const classes = useStyle();
+
   const [click, toggleClick] = useToggle(true);
+  // manages 'selected cuisines' by user
   const [myCuisines, setCuisines] = useState(["All"]);
 
   const handleArray = (event, newCuisines) => {
     setCuisines(newCuisines);
   };
+
+  //hardcoded values of cuisines
   const cuisines = [
     "All",
     "Fast food",
@@ -36,45 +43,87 @@ function FilterDrawer() {
     dispatch({ type: "filterByCuisine", value: myCuisines });
     showDrawer(false);
   };
+
   return (
     <Drawer anchor="right" open={val} onClose={() => showDrawer(false)}>
-      <div>
-        <h2>Search Filters</h2>
-        <img src={close} alt="close icon" />
-      </div>
-
-      <div>
-        <h2>Sort by</h2>
-        <ToggleButton value="check" selected={click} onChange={toggleClick}>
-          <div>
-            <img src={fire} alt="open icon" />
+      <div className={classes.FilterDrawerContainer}>
+        <div className={classes.DrawerInnerContainer}>
+          <div className={classes.DrawerHeader}>
+            <h2>Search filters</h2>
+            <img src={close} alt="close icon" onClick={handleApplyFilters} />
           </div>
-          <span className={click ? "opened" : "close"}>open</span>
-        </ToggleButton>
-      </div>
 
-      <div>
-        <h2>Cuisine</h2>
-
-        <ToggleButtonGroup
-          value={myCuisines}
-          onChange={handleArray}
-          aria-label="cuisines"
-        >
-          {cuisines.map((c) => (
-            <ToggleButton value={c} key={c}>
-              {c}
+          <div>
+            <h2>Sort by</h2>
+            <ToggleButton
+              value="check"
+              selected={click}
+              onChange={toggleClick}
+              className={
+                `${classes.openToggleButton} ` +
+                (click && `${classes.activeToggleButton}`)
+              }
+            >
+              <div
+                className={
+                  `${classes.fireIconContainer} ` +
+                  (click && `${classes.activeFireIcon}`)
+                }
+              >
+                <img src={fire} alt="open icon" />
+              </div>
+              <p
+                className={
+                  `${classes.openText} ` +
+                  (click && `${classes.activeOpenText}`)
+                }
+              >
+                {click ? "open" : "closed"}
+              </p>
             </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
+          </div>
 
-        <div>
-          <div>See more</div>
-          <img src={dropdown} alt="dropdown icon" />
+          <div>
+            <h2>Cuisine</h2>
+
+            <ToggleButtonGroup
+              value={myCuisines}
+              onChange={handleArray}
+              aria-label="cuisines"
+              className={classes.CuisinesContainer}
+            >
+              {cuisines.map((c) => (
+                <ToggleButton
+                  value={c}
+                  key={c}
+                  className={
+                    `${classes.openToggleButton} ` +
+                    (myCuisines.includes(c) && `${classes.activeToggleButton}`)
+                  }
+                >
+                  <button
+                    className={
+                      `${classes.cuisineBtn} ` +
+                      (myCuisines.includes(c) && `${classes.activeCuisineBtn}`)
+                    }
+                  >
+                    {c}
+                  </button>
+                </ToggleButton>
+              ))}
+            </ToggleButtonGroup>
+
+            <div className={classes.seeMore}>
+              <p>See more</p>
+              <img src={dropdown} alt="dropdown icon" />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <button onClick={handleApplyFilters}>Apply filters</button>
+        <button onClick={handleApplyFilters} className={classes.ApplyButton}>
+          <h3>Apply filters</h3>
+        </button>
+      </div>
     </Drawer>
   );
 }
