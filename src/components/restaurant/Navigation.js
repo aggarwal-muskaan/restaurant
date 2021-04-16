@@ -24,7 +24,13 @@ function Navigation() {
   };
 
   return (
-    <Grid container spacing={9}>
+    <Grid
+      container
+      // spacing={9}
+      alignItems="center"
+      justify="space-between"
+      className={classes.NavigationTop}
+    >
       <Grid item className={classes.Location}>
         <div className={classes.LocationName}>
           <Location />
