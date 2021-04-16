@@ -61,7 +61,7 @@ const useStyle = makeStyles({
   },
 
   CuisinesContainer: {
-    display: "block",
+    display: "block !important",
   },
 
   cuisineBtn: {
