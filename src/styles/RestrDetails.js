@@ -84,6 +84,7 @@ const useStyle = makeStyles({
 
   RestrImage: {
     width: "50%",
+    maxHeight: "370px",
     borderRadius: "16px",
     backgroundSize: "cover",
     objectFit: "cover",
