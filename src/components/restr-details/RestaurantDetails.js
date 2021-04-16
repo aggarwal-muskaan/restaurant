@@ -6,6 +6,7 @@ import { RESTR_DETAILS_URL, RESTR_MENU_DETAILS } from "../../variables/baseUrl";
 
 import { useStyle } from "../../styles/RestrDetails";
 
+import Skeleton1 from "../content-placeholder/Skeleton1";
 import { ReactComponent as LeftIcon } from "../../assets/restrDetail/leftChevron.svg";
 import { ReactComponent as CartIcon } from "../../assets/navigationTop/filter.svg";
 import clock from "../../assets/restrDetail/clock.svg";
@@ -71,7 +72,7 @@ function RestaurantDetails() {
             className={`${classes.cartButton} ${classes.navigationButton}`}
           >
             <CartIcon />
-            <p>2</p>
+            {/* <p>2</p> */}
           </button>
         </div>
 
@@ -124,7 +125,7 @@ function RestaurantDetails() {
       </div>
     );
 
-  return spinner ? "Loading..." : printData;
+  return spinner ? <Skeleton1 /> : printData;
 }
 
 export default RestaurantDetails;
