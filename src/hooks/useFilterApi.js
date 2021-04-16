@@ -31,6 +31,7 @@ function reducer(currState, action) {
       if (action.value.length === 0 || action.value.includes("All"))
         return allRestaurantsData;
       else {
+        // eslint-disable-next-line
         const arr = allRestaurantsData.filter((r) => {
           // since restaurantCuisine is not an array, therefore separating each cuisine with ',' as delimiter
           const newArr = r.restaurantCuisine.split(",");

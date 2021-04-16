@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { GREY_COLOR, ORANGE_COLOR } from "../variables/colors";
 
 const useStyle = makeStyles({
   CategoryContainer: {
@@ -7,18 +8,14 @@ const useStyle = makeStyles({
   Category: {
     margin: "0 30px 2px 0",
     width: "auto",
-    "&:hover": {
-      cursor: "pointer",
-      background: "#503E9D",
-      borderRadius: "12px",
-      color: "#fff",
-      padding: "2px",
-      transition: ".5s ease-in-out",
-      //   border: "transparent",
+    cursor: "pointer",
+
+    "&:hover h3": {
+      color: ORANGE_COLOR,
     },
   },
   CategoryImage: {
-    background: "#F7F7F7",
+    background: GREY_COLOR,
     borderRadius: "12px",
     // width: "44px",
     // height: "44px",
