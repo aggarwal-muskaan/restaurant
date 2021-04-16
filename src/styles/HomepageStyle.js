@@ -9,6 +9,11 @@ const useStyle = makeStyles({
     alignItems: "center",
   },
 
+  showNotFound: {
+    color: "red",
+    fontStyle: "italic",
+  },
+
   HomepageRestr: {
     width: "90%",
     margin: "2.5rem 0",

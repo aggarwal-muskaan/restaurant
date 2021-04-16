@@ -32,7 +32,7 @@ function Homepage() {
           <Category />
 
           {/* shows message if searched for non-existing restaurant in input field */}
-          {errMessage && <h3>{errMessage}</h3>}
+          {errMessage && <h3 className={classes.showNotFound}>{errMessage}</h3>}
 
           <div className={classes.HomepageRestr}>
             <h2>Restaurants</h2>

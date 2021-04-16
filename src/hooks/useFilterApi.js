@@ -15,7 +15,7 @@ function reducer(currState, action) {
       );
 
       if (arr.length === 0) {
-        const errMessage = `No match found for ${action.value}`;
+        const errMessage = `No match found for '${action.value}'`;
         return errMessage;
       } else return arr;
     }
