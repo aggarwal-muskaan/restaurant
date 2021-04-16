@@ -63,7 +63,8 @@ const useStyle = makeStyles({
     cursor: "pointer",
     "&:hover": {
       "& span": {
-        color: ORANGE_COLOR,
+        color: "blue",
+        textDecoration: "underline",
       },
     },
   },
