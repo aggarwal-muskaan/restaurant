@@ -25,22 +25,22 @@ function Sidebar() {
     {
       icon: Document,
       text: "Orders",
-      path: "/3",
+      path: "/page/soon",
     },
     {
       icon: Notifications,
       text: "Notification",
-      path: "/1",
+      path: "/page/soon",
     },
     {
       icon: Support,
       text: "Help & Support",
-      path: "/",
+      path: "/page/soon",
     },
     {
       icon: Settings,
       text: "Settings",
-      path: "/",
+      path: "/page/soon",
     },
   ];
 
@@ -58,7 +58,6 @@ function Sidebar() {
             <img src={logo} alt="logo" />
           </Grid>
           <Grid item xl>
-            {/* <Typography variant="h3"></Typography> */}
             <h3>Pomo & co</h3>
           </Grid>
         </Grid>
