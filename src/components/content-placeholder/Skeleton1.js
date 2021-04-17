@@ -3,7 +3,14 @@ import Skeleton from "@material-ui/lab/Skeleton";
 
 const Skeleton1 = () => {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        padding: "2rem",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -79,7 +86,7 @@ const Skeleton1 = () => {
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
