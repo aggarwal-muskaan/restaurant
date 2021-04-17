@@ -58,9 +58,8 @@ function Sidebar() {
             <img src={logo} alt="logo" />
           </Grid>
           <Grid item xl>
-            <Typography className={classes.navlinkText}>
-              <h3>Pomo & co</h3>
-            </Typography>
+            {/* <Typography variant="h3"></Typography> */}
+            <h3>Pomo & co</h3>
           </Grid>
         </Grid>
       </div>
@@ -70,6 +69,7 @@ function Sidebar() {
           <NavLink
             exact
             to={t.path}
+            key={t.text}
             className={classes.navlinkTab}
             activeClassName={classes.activeNavlink}
           >

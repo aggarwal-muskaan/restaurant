@@ -35,7 +35,7 @@ const useStyle = makeStyles({
   },
   menuButton: {
     [breakpoints.up("sm")]: {
-      display: "none",
+      display: "none !important",
     },
   },
   navigationButton: {

@@ -17,8 +17,9 @@ function Skeleton2() {
         >
           {Array(5)
             .fill()
-            .map((e) => (
+            .map((e, index) => (
               <div
+                key={index}
                 style={{
                   width: "100px",
                   display: "flex",
@@ -45,8 +46,8 @@ function Skeleton2() {
         >
           {Array(6)
             .fill()
-            .map((e) => (
-              <div>
+            .map((e, index) => (
+              <div key={index}>
                 <Skeleton variant="rect" width={210} height={118} />
                 <Skeleton height={35} style={{ marginBottom: 5 }} />
                 <Skeleton

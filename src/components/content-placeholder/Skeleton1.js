@@ -57,8 +57,8 @@ const Skeleton1 = () => {
       >
         {Array(6)
           .fill()
-          .map((e) => (
-            <div style={{ width: "210px" }}>
+          .map((e, index) => (
+            <div style={{ width: "210px" }} key={index}>
               <Skeleton
                 variant="rect"
                 width={210}
