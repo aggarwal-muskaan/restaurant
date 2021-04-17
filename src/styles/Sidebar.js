@@ -1,13 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { GREY_COLOR, NAVY_BLUE_COLOR, DARK_GREY } from "../variables/colors";
 
 const useStyle = makeStyles({
   sidebar: {
-    position: "absolute",
+    position: "fixed",
     width: "300px",
     left: "0%",
     top: "0%",
     height: "100vh",
-    background: "#f7f7f7",
+    background: GREY_COLOR,
     borderRadius: "0px 24px 24px 0px",
   },
   logoContainer: {
@@ -32,7 +33,7 @@ const useStyle = makeStyles({
     textDecoration: "none",
   },
   activeNavlink: {
-    background: "#503E9D",
+    background: NAVY_BLUE_COLOR,
     borderRadius: "12px",
     "& p ,& img": {
       color: "#fff",
@@ -43,7 +44,7 @@ const useStyle = makeStyles({
     margin: 0,
   },
   navlinkText: {
-    color: "#626264",
+    color: DARK_GREY,
     fontFamily: "Open Sans",
   },
 });
