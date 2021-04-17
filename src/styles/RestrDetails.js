@@ -5,6 +5,7 @@ import {
   ORANGE_COLOR,
   DIVIDER,
 } from "../variables/colors";
+import breakpoints from "../variables/breakpoint";
 
 const useStyle = makeStyles({
   RestrPage: {
@@ -62,10 +63,18 @@ const useStyle = makeStyles({
       color: DARK_GREY,
       margin: 0,
     },
+
+    [breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
   },
 
   RestrInnerContainer: {
     width: "47%",
+    [breakpoints.down("md")]: {
+      order: 2,
+      width: "100%",
+    },
   },
 
   RestrInfo: {
@@ -93,6 +102,11 @@ const useStyle = makeStyles({
     borderRadius: "16px",
     backgroundSize: "cover",
     objectFit: "cover",
+
+    [breakpoints.down("md")]: {
+      width: "100%",
+      order: 1,
+    },
   },
 
   DividerAboveMenu: {
