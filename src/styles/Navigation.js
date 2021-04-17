@@ -6,6 +6,9 @@ const useStyle = makeStyles({
   NavigationTop: {
     margin: "2.5rem 0",
     width: "90%",
+    [breakpoints.down("sm")]: {
+      margin: "1.5rem 0",
+    },
   },
 
   Location: {
