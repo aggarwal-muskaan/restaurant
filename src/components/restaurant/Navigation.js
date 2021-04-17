@@ -65,6 +65,7 @@ function Navigation() {
               if (e.key === "Enter") {
                 dispatch({ type: "filterByRestaurantName", value: input });
                 setInput("");
+                e.target.blur();
               }
             }}
             placeholder="Search for Restaurants (Press Enter to search)"
