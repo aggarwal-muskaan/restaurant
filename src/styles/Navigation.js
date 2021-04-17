@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { GREY_COLOR, NAVY_BLUE_COLOR, ORANGE_COLOR } from "../variables/colors";
+import breakpoints from "../variables/breakpoint";
 
 const useStyle = makeStyles({
   NavigationTop: {
@@ -32,7 +33,11 @@ const useStyle = makeStyles({
     padding: "0 13px",
     width: "370px",
   },
-
+  menuButton: {
+    [breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
   navigationButton: {
     borderRadius: "10px",
     height: "48px",
