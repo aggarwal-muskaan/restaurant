@@ -2,9 +2,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { GREY_COLOR, ORANGE_COLOR } from "../variables/colors";
 
 const useStyle = makeStyles({
-  CategoryContainer: {
-    fontFamily: "Open Sans",
+  CategoriesHolder: {
+    width: "90%",
   },
+
+  // CategoryContainer: {
+  //   lineHeight: "2rem",
+  // },
+
   Category: {
     margin: "0 30px 2px 0",
     width: "auto",

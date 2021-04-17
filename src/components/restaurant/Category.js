@@ -43,7 +43,7 @@ function Category() {
   };
 
   return (
-    <div>
+    <div className={classes.CategoriesHolder}>
       <h2>Category</h2>
       <div>
         <Grid
