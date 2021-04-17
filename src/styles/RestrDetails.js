@@ -1,5 +1,10 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { NAVY_BLUE_COLOR, DARK_GREY, ORANGE_COLOR } from "../variables/colors";
+import {
+  NAVY_BLUE_COLOR,
+  DARK_GREY,
+  ORANGE_COLOR,
+  DIVIDER,
+} from "../variables/colors";
 
 const useStyle = makeStyles({
   RestrPage: {
@@ -88,6 +93,12 @@ const useStyle = makeStyles({
     borderRadius: "16px",
     backgroundSize: "cover",
     objectFit: "cover",
+  },
+
+  DividerAboveMenu: {
+    width: "50%",
+    border: `1px solid ${DIVIDER}`,
+    marginTop: "3rem",
   },
 
   MenuError: {

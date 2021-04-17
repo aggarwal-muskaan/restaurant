@@ -11,3 +11,5 @@ export const LIGHT_PINK = "rgba(251, 109, 58, 0.1)";
 export const DARK_GREY = "#626264";
 
 export const LIGHT_BLUE = "rgba(80, 62, 157, 0.1)";
+
+export const DIVIDER = "rgba(163, 163, 164, 0.32)";

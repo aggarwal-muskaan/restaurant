@@ -12,6 +12,7 @@ import { ReactComponent as CartIcon } from "../../assets/navigationTop/filter.sv
 import clock from "../../assets/restrDetail/clock.svg";
 import phone from "../../assets/restrDetail/phone.svg";
 import { ReactComponent as WebIcon } from "../../assets/restrDetail/web.svg";
+import { Divider } from "@material-ui/core";
 
 function RestaurantDetails() {
   let params = useParams();
@@ -104,6 +105,7 @@ function RestaurantDetails() {
             alt={selectedRestr.restaurantName}
           />
         </div>
+        <Divider className={classes.DividerAboveMenu} />
         {!isMenuOfRestr && (
           <h4 className={classes.MenuError}>
             Menu is not provided by the Restaurant.
